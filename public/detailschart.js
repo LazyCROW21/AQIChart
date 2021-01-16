@@ -30,6 +30,7 @@ function addDetail(query, color)
             var dataArrSO2 = [];
             var dataArrO3 = [];
             var dataArrAQI = [];
+            var dataArrAQIXY = [];
             //var dataArrTimeLables = [];
             let dtSet = new Set(reportChart.data.labels);
             for(let i=0; i<dataobj.length; i+=5)
@@ -43,6 +44,7 @@ function addDetail(query, color)
                 dataArrO3.push(dataobj[i].o3);
                 // dataArrTimeLables.push(dataobj[i].timestamp_local);
                 dtSet.add(dataobj[i].timestamp_local);
+                dataArrAQIXY.push({x: dataobj[i].timestamp_local, y:dataobj[i].aqi});
             }
             //console.log(dataArrAQI, dataArrTimeLables);
             
@@ -51,7 +53,7 @@ function addDetail(query, color)
                 label: data.city_name,
                 fill: false,
                 backgroundColor: color,
-                data: dataArrAQI
+                data: dataArrAQIXY
             });
             reportChart.update();
         }
