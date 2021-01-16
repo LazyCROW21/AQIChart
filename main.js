@@ -15,7 +15,7 @@ app.get('/', (req, res)=>{
     res.render('index');
 });
 
-app.get('/forcast', (req, res)=>{
+app.get('/forecast', (req, res)=>{
     res.render('forecast');
 });
 
