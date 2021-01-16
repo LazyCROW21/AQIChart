@@ -1,0 +1,17 @@
+{
+  "name": "airqualityindex",
+  "version": "1.0.0",
+  "description": "Display and compare air quality of various locations",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon main.js"
+  },
+  "author": "Hardik Kardam",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.10",
+    "nodemon": "^2.0.7"
+  }
+}
