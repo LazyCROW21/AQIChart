@@ -1,5 +1,23 @@
 <%- include('templates/header.ejs'); %>
 
-Forcast
+<div class="container">
+    <h1 class="display-1">Forcast</h1>
+    <div class="row">
+        <div class="col-12">
+            This will predict the AQI for the next 72 hrs with 3 hrs interval
+        </div>
+        <div class="col-12">
+            <div class="input-group mb-3">
+                <input type="text" id="aqipredictinp" class="form-control" placeholder="PINCODE" aria-label="PINCODE" aria-describedby="PINCODE">
+                <button class="btn btn-outline-primary" type="button" onclick="predictAQI()">Forcast</button>
+            </div>
+        </div>
+        <div class="col-12">
+            <canvas id="forcastcanvas"></canvas>
+        </div>
+    </div>
+</div>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="./forcast.js"></script>
 <%- include('templates/footer.ejs'); %>
