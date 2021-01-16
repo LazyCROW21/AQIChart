@@ -207,9 +207,19 @@ var aqichartcomp = new Chart(aqicanvascomp, {
 });
 
 
-function addtoTable()
+function updatetoTable(rowid, data, aqibuck)
 {
-    
+    let row = document.getElementById('row'+rowid);
+    row.className = aqibuck;
+    row.cells[1].innerText = data.country_code;
+    row.cells[2].innerText = data.city_name;
+    row.cells[3].innerText = data.data[0].aqi;
+    row.cells[4].innerText = data.data[0].pm25;
+    row.cells[5].innerText = data.data[0].pm10;
+    row.cells[6].innerText = data.data[0].o3;
+    row.cells[7].innerText = data.data[0].so2;
+    row.cells[8].innerText = data.data[0].no2;
+    row.cells[9].innerText = data.data[0].co;
 }
 
 async function pushDataToBar(inpid){
@@ -228,14 +238,12 @@ async function pushDataToBar(inpid){
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var data = JSON.parse(this.response);
-            console.log(data);
+            //console.log(data);
             var dataobj = data.data[0];
             var dataArr = [];
             dataArr.push(dataobj.pm25);
             dataArr.push(dataobj.pm10);
-            //dataArr.push(dataobj.NO);
             dataArr.push(dataobj.no2);
-            //dataArr.push(dataobj.NOx);
             dataArr.push(dataobj.co);
             dataArr.push(dataobj.so2);
             dataArr.push(dataobj.o3);
@@ -268,7 +276,7 @@ async function pushDataToBar(inpid){
             }
             
             var randomcolor = getRandomColor();
-            
+            updatetoTable(inpid, data, aqi_bucket);
             if(inpid == 1)
             {
                 aqichart1.data.datasets.push({

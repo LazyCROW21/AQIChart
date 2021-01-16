@@ -9,9 +9,9 @@ const app = express();
 const PORT = 3000;
 
 
-mongoose.connect('mongodb://localhost:27017/AirQualityIndex', {useNewUrlParser: true, useUnifiedTopology: true}, () => {
-    console.log('Connected to DB');
-});
+// mongoose.connect('mongodb://localhost:27017/AirQualityIndex', {useNewUrlParser: true, useUnifiedTopology: true}, () => {
+//     console.log('Connected to DB');
+// });
 
 app.set('view engine', 'ejs');
 
@@ -37,57 +37,57 @@ app.get('/contactus', (req, res)=>{
 
 
 // APIs
-app.get('/test', (req, res)=>{
-    const data = {
-        "results": [
-          {
-            "id": 1,
-            "text": "Option 1"
-          },
-          {
-            "id": 2,
-            "text": "Option 2"
-          },
-          {
-            "id": 3,
-            "text": "Option 3"
-          }
-        ]
-    };
-    res.send(data);
-});
+// app.get('/test', (req, res)=>{
+//     const data = {
+//         "results": [
+//           {
+//             "id": 1,
+//             "text": "Option 1"
+//           },
+//           {
+//             "id": 2,
+//             "text": "Option 2"
+//           },
+//           {
+//             "id": 3,
+//             "text": "Option 3"
+//           }
+//         ]
+//     };
+//     res.send(data);
+// });
 
-app.get('/alldata', (req, res)=>{
-    console.log("Requested All Data");
-    AirQIdx.find({}, function (err, data) {
-        if(err)
-        {
-            console.error(err);
-        }
-        else
-        {
-            console.log("All data sent");
-            res.send(data);
-        }
-    });
-    // res.send("Requested Id: "+req.params.id);
-});
+// app.get('/alldata', (req, res)=>{
+//     console.log("Requested All Data");
+//     AirQIdx.find({}, function (err, data) {
+//         if(err)
+//         {
+//             console.error(err);
+//         }
+//         else
+//         {
+//             console.log("All data sent");
+//             res.send(data);
+//         }
+//     });
+//     // res.send("Requested Id: "+req.params.id);
+// });
 
-app.get('/aiqstat/:id', (req, res)=>{
-    console.log("Requested Id: ", req.params.id);
-    AirQIdx.findOne({Index: req.params.id}, function (err, data) {
-        if(err)
-        {
-            console.error(err);
-        }
-        else
-        {
-            console.log(data);
-            res.send(data);
-        }
-    });
-    // res.send("Requested Id: "+req.params.id);
-});
+// app.get('/aiqstat/:id', (req, res)=>{
+//     console.log("Requested Id: ", req.params.id);
+//     AirQIdx.findOne({Index: req.params.id}, function (err, data) {
+//         if(err)
+//         {
+//             console.error(err);
+//         }
+//         else
+//         {
+//             console.log(data);
+//             res.send(data);
+//         }
+//     });
+//     // res.send("Requested Id: "+req.params.id);
+// });
 
 // app.get('/save', (req, res)=>{
 //     var stat = new AirQIdx({
