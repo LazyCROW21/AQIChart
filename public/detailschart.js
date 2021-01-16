@@ -46,7 +46,7 @@ function addDetail(query, color)
             }
             //console.log(dataArrAQI, dataArrTimeLables);
             
-            reportChart.data.labels = Array.from(dtSet);
+            reportChart.data.labels = Array.from(dtSet).sort();
             reportChart.data.datasets.push({
                 label: data.city_name,
                 fill: false,

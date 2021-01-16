@@ -210,7 +210,6 @@ var aqichartcomp = new Chart(aqicanvascomp, {
 function updatetoTable(rowid, data, aqibuck)
 {
     let row = document.getElementById('row'+rowid);
-    row.className = aqibuck;
     row.cells[1].innerText = data.country_code;
     row.cells[2].innerText = data.city_name;
     row.cells[3].innerText = data.data[0].aqi;
@@ -386,7 +385,7 @@ function popDataFromBar(btn, data_id){
 }
 
 
-$(document).ready(function() {
-    //popDataFromBar(document.getElementById('tobedeleted'), 'Something');
-    //pushDataToBar();
-});
+// $(document).ready(function() {
+//     //popDataFromBar(document.getElementById('tobedeleted'), 'Something');
+//     //pushDataToBar();
+// });
