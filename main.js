@@ -16,7 +16,7 @@ app.get('/', (req, res)=>{
 });
 
 app.get('/forcast', (req, res)=>{
-    res.render('forcast');
+    res.render('forecast');
 });
 
 app.get('/services', (req, res)=>{
