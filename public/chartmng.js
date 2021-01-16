@@ -277,6 +277,7 @@ async function pushDataToBar(inpid){
             
             var randomcolor = getRandomColor();
             updatetoTable(inpid, data, aqi_bucket);
+            addDetail(query, randomcolor);
             if(inpid == 1)
             {
                 aqichart1.data.datasets.push({
